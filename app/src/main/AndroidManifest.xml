@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".FindProjects"></activity>
     </application>
 
 </manifest>
