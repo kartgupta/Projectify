@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kartikgupta.projectify.Project1">
+    tools:context="com.example.kartikgupta.projectify.Project1Applied">
+
 
     <TextView
         android:id="@+id/textView"
@@ -135,8 +136,8 @@ HTML, CSS"
         android:id="@+id/button22"
         android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:background="@color/Indigo"
-        android:text="Apply"
+        android:background="@color/CornflowerBlue"
+        android:text="Applied!"
         android:textAllCaps="false"
         android:textColor="@color/White"
         android:textStyle="bold"
@@ -155,5 +156,18 @@ HTML, CSS"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="470dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="384dp"
+        android:layout_height="54dp"
+        android:background="@color/CornflowerBlue"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="You have successfully applied to this project!"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="513dp" />
+
 
 </android.support.constraint.ConstraintLayout>
