@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kartikgupta.projectify.Project1Applied">
+    tools:context="com.example.kartikgupta.projectify.MyProjects1Details">
 
 
     <TextView
@@ -42,7 +42,6 @@
         android:background="@color/Indigo"
         android:text="Find Projects"
         android:textColor="@color/White"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +63,7 @@
         android:background="@color/Indigo"
         android:text="My Projects"
         android:textColor="@color/White"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button3"
@@ -73,7 +73,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Communities in Schools of San Antonio"
+        android:text="Michigan Medicine"
         android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -84,21 +84,20 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ecommerce"
+        android:text="Web"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="139dp" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="369dp"
-        android:layout_height="251dp"
-        android:text="Communities of Schools in San Antonio is a network of passionate professionals working in public schools to surround students with a community of support, empowering them to stay in school and achieve in life
-
-Understanding the importance of Bill’s message, the Communities In Schools model was brought to San Antonio in 1985 thanks to forward-thinking community leaders.
-
-Today, Communities In Schools is the nation’s largest and most effective organization dedicated to keeping kids in school and helping them succeed in life. We partner with local businesses, social service agencies, health care providers and volunteers."
+        android:layout_height="146dp"
+        android:gravity="top"
+        android:text="
+Re-architected the content and information on the Drupal site. The Deploy module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.
+"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="193dp" />
+        tools:layout_editor_absoluteY="162dp" />
 
     <TextView
         android:id="@+id/textView12"
@@ -109,7 +108,7 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="171dp" />
+        tools:layout_editor_absoluteY="158dp" />
 
     <TextView
         android:id="@+id/textView13"
@@ -120,7 +119,7 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="444dp" />
+        tools:layout_editor_absoluteY="308dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -129,21 +128,51 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:text="Front-end Developer
 HTML, CSS"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="470dp" />
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="160dp"
+        android:layout_height="43dp"
+        android:text="User Experience Designer
+Java"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="450dp" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="75dp"
+        android:layout_height="26dp"
+        android:background="@color/White"
+        android:text="See profile"
+        android:textAllCaps="false"
+        android:textColor="@color/Indigo"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="398dp" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="75dp"
+        android:layout_height="26dp"
+        android:background="@color/White"
+        android:text="See profile"
+        android:textAllCaps="false"
+        android:textColor="@color/Indigo"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="424dp" />
 
     <Button
         android:id="@+id/button22"
-        android:layout_width="109dp"
-        android:layout_height="wrap_content"
-        android:background="@color/CornflowerBlue"
-        android:text="Applied!"
+        android:layout_width="75dp"
+        android:layout_height="26dp"
+        android:background="@color/White"
+        android:text="See profile"
         android:textAllCaps="false"
-        android:textColor="@color/White"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="444dp" />
+        android:textColor="@color/Indigo"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="512dp" />
 
     <Button
         android:id="@+id/button5"
@@ -156,20 +185,62 @@ HTML, CSS"
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="470dp" />
+        tools:layout_editor_absoluteY="330dp" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="384dp"
-        android:layout_height="54dp"
-        android:background="@color/CornflowerBlue"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="You have successfully applied to this project!"
-        android:textColor="@color/White"
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="39dp"
+        android:layout_height="21dp"
+        android:background="@color/White"
+        android:text="UXD"
+        android:textAllCaps="false"
+        android:textColor="@color/Indigo"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="513dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="450dp" />
 
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Applicants:"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Applicants:"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="493dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="center_vertical|fill_vertical"
+        android:text=" Mary Jane"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="392dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="fill_vertical"
+        android:text="Jack Morrison "
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:gravity="fill_vertical"
+        android:text="Linda Green"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="512dp" />
 
 </android.support.constraint.ConstraintLayout>

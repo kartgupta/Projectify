@@ -36,6 +36,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:gravity="fill_vertical"
         android:text="Skills:"
         android:textColor="@color/Black"
         android:textSize="18sp"
@@ -46,6 +47,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:gravity="fill_vertical"
         android:text="Experience"
         android:textColor="@color/Black"
         android:textSize="18sp"
@@ -56,6 +58,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:gravity="fill_vertical"
         android:text="Designation"
         android:textColor="@color/Black"
         android:textSize="18sp"
@@ -78,6 +81,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:gravity="fill_vertical"
         android:text="Interests"
         android:textColor="@color/Black"
         android:textSize="18sp"
@@ -91,6 +95,7 @@
         android:background="@color/Indigo"
         android:text="Profile"
         android:textColor="@color/White"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button4"
@@ -136,8 +141,9 @@
         android:ems="10"
         android:hint="Type more inforamtion about you! anything helps, including hobbies as well as how many hours you can put into the project and other perferenees "
         android:inputType="textMultiLine"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="414dp" />
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="396dp" />
 
     <EditText
         android:id="@+id/editText5"

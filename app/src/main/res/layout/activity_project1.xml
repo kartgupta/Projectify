@@ -139,6 +139,7 @@ HTML, CSS"
         android:text="Apply"
         android:textAllCaps="false"
         android:textColor="@color/White"
+        android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="253dp"
         tools:layout_editor_absoluteY="444dp" />

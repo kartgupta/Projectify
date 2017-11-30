@@ -26,7 +26,9 @@
         <activity android:name=".FindProjects" />
         <activity android:name=".Project1" />
         <activity android:name=".Project1Applied" />
-        <activity android:name=".MyProjects"></activity>
+        <activity android:name=".MyProjects" />
+        <activity android:name=".MyProjects1Details" />
+        <activity android:name=".NewProject"></activity>
     </application>
 
 </manifest>
