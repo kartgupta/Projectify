@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "483471031428",
+    "firebase_url": "https://projectify-ea742.firebaseio.com",
+    "project_id": "projectify-ea742",
+    "storage_bucket": "projectify-ea742.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483471031428:android:1d5ac7cef84a9bd8",
+        "android_client_info": {
+          "package_name": "com.example.kartikgupta.projectify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483471031428-9ukkibibd4utefgfv2114ilg18so2c2q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kartikgupta.projectify",
+            "certificate_hash": "bf637ec6eecc37379aaa807f94f7ab1625cf64bb"
+          }
+        },
+        {
+          "client_id": "483471031428-2s9roeh70jk4q41o7fstaqvsvunq0d7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVYqlb86KpKAK4oVLHo3XRJW48RPlnOGY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483471031428-2s9roeh70jk4q41o7fstaqvsvunq0d7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

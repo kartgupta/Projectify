@@ -28,7 +28,8 @@
         <activity android:name=".Project1Applied" />
         <activity android:name=".MyProjects" />
         <activity android:name=".MyProjects1Details" />
-        <activity android:name=".NewProject"></activity>
+        <activity android:name=".NewProject" />
+        <activity android:name=".ProjectList"></activity>
     </application>
 
 </manifest>
