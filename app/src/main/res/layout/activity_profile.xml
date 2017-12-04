@@ -135,13 +135,15 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="357dp"
+        android:layout_width="350dp"
         android:layout_height="153dp"
         android:ems="10"
         android:hint="Type more inforamtion about you! anything helps, including hobbies as well as how many hours you can put into the project and other perferenees "
         android:inputType="textMultiLine"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="396dp" />
 
     <EditText
