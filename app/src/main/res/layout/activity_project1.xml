@@ -24,7 +24,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonProfile"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:background="@color/Indigo"
@@ -64,7 +64,7 @@
         android:background="@color/Indigo"
         android:text="My Projects"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonProfile"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toTopOf="@+id/button3" />
