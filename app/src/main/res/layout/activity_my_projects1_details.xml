@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewProjectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Michigan Medicine"
@@ -82,15 +82,15 @@
         tools:layout_editor_absoluteY="121dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewProjectCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Web"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textViewProjectName"
         tools:layout_editor_absoluteY="148dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewDescriptionContent"
         android:layout_width="350dp"
         android:layout_height="146dp"
         android:gravity="top"
@@ -102,34 +102,34 @@
         tools:layout_editor_absoluteY="184dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:text="Description"
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textViewProjectCategory"
         tools:layout_editor_absoluteY="167dp" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewRules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open Roles:"
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textViewDescriptionContent"
         tools:layout_editor_absoluteY="330dp" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewRoleDetail"
         android:layout_width="256dp"
         android:layout_height="21dp"
         android:text="Front-end Developer, HTML, CSS"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="364dp" />
 
     <TextView
@@ -175,7 +175,7 @@
         tools:layout_editor_absoluteY="512dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonRole"
         android:layout_width="39dp"
         android:layout_height="21dp"
         android:background="@color/White"
@@ -184,7 +184,7 @@
         android:textColor="@color/Indigo"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textViewRules"
         tools:layout_editor_absoluteY="364dp" />
 
     <Button
@@ -201,11 +201,11 @@
         tools:layout_editor_absoluteY="464dp" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textViewApplicant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Applicants:"
-        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/buttonRole"
         tools:layout_editor_absoluteY="385dp" />
 
     <TextView
@@ -217,7 +217,7 @@
         tools:layout_editor_absoluteY="493dp" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/textViewApplicantName"
         android:layout_width="153dp"
         android:layout_height="23dp"
         android:gravity="center_vertical|fill_vertical"

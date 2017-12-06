@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewProjectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -79,19 +79,19 @@
         android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textViewProjectCategory"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewProjectCategory"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:text="Ecommerce"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/textViewDescription"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProjectName" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewDescriptionContent"
         android:layout_width="359dp"
         android:layout_height="237dp"
         android:text="Communities of Schools in San Antonio is a network of passionate professionals working in public schools to surround students with a community of support, empowering them to stay in school and achieve in life
@@ -100,10 +100,10 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginTop="8dp"
@@ -111,18 +111,18 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="@+id/textViewDescriptionContent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProjectCategory" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewRules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open Roles:"
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContent"
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
@@ -133,8 +133,8 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:text="Front-end Developer
 HTML, CSS"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRole"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRules" />
 
     <Button
         android:id="@+id/button22"
@@ -146,11 +146,11 @@ HTML, CSS"
         android:textColor="@color/White"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewDescriptionContent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonRole"
         android:layout_width="39dp"
         android:layout_height="21dp"
         android:background="@color/White"
@@ -159,8 +159,8 @@ HTML, CSS"
         android:textColor="@color/Indigo"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintStart_toStartOf="@+id/textViewRules"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRules" />
 
     <TextView
         android:id="@+id/textView16"

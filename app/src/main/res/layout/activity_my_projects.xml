@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewRules"
         android:layout_width="95dp"
         android:layout_height="24dp"
         android:text="Applied role:"
@@ -150,7 +150,7 @@
         tools:layout_editor_absoluteY="406dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewProjectCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -185,7 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonRole"
         android:layout_width="43dp"
         android:layout_height="23dp"
         android:layout_marginStart="8dp"
@@ -195,7 +195,7 @@
         android:textColor="@color/Indigo"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintStart_toEndOf="@+id/textViewRules"
         tools:layout_editor_absoluteY="279dp" />
 
     <Button
