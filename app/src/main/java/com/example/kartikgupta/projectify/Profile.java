@@ -92,7 +92,7 @@ public class Profile extends Activity implements View.OnClickListener{
 
         if(view == buttonSaveProfile) {
             //user input data
-//            String TextSkill = editTextSkill.getText().toString();
+           // String TextSkill = editTextSkill.getText().toString();
             String interest = editTextInterest.getText().toString();
             String experience = editTextExperience.getText().toString();
             String designation = editTextDesignation.getText().toString();
