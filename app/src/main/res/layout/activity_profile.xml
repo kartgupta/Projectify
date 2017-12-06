@@ -37,11 +37,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginStart="16dp"
         android:gravity="fill_vertical"
         android:text="Skills:"
         android:textColor="@color/Black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="192dp" />
 
     <TextView
@@ -63,8 +64,8 @@
         android:text="Designation"
         android:textColor="@color/Black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText8" />
+        app:layout_constraintStart_toStartOf="@+id/editTextMoreInfo"
+        app:layout_constraintTop_toTopOf="@+id/editTextDesignation" />
 
     <TextView
         android:id="@+id/textView7"
@@ -134,56 +135,58 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="350dp"
-        android:layout_height="153dp"
+        android:id="@+id/editTextMoreInfo"
+        android:layout_width="353dp"
+        android:layout_height="86dp"
         android:ems="10"
         android:hint="Type more inforamtion about you! anything helps, including hobbies as well as how many hours you can put into the project and other perferenees "
         android:inputType="textMultiLine"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="396dp" />
+        tools:layout_editor_absoluteY="429dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextSkill"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Java, Web, etc."
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="@+id/textView3"
-        tools:layout_editor_absoluteX="121dp" />
+        tools:layout_editor_absoluteX="128dp" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextExperience"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Enter number of years"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText7"
+        app:layout_constraintStart_toStartOf="@+id/editTextInterest"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextInterest"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="AI, Blockchain, etc."
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText5"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="246dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editTextDesignation"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Junior, Manager, etc."
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText6"
+        app:layout_constraintStart_toStartOf="@+id/editTextExperience"
         tools:layout_editor_absoluteY="349dp" />
 
     <ImageButton
@@ -193,5 +196,17 @@
         android:src="@android:drawable/ic_menu_edit"
         tools:layout_editor_absoluteX="225dp"
         tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/buttonSaveProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="156dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="515dp" />
 
 </android.support.constraint.ConstraintLayout>

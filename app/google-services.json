@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "483471031428-cbh78tsnd40mgfggjqbiup4p8plrodmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kartikgupta.projectify",
+            "certificate_hash": "54bb5da8f7a40e9021aba88e61aecd019f51aed9"
+          }
+        },
+        {
+          "client_id": "483471031428-if9bg5ng441fhcsaibdskc30547tdubd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kartikgupta.projectify",
+            "certificate_hash": "03db8900809aa5045eb740ab6604eeee89f39570"
+          }
+        },
+        {
           "client_id": "483471031428-9ukkibibd4utefgfv2114ilg18so2c2q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
