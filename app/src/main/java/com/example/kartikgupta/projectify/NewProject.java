@@ -16,8 +16,13 @@ import java.util.ArrayList;
 public class NewProject extends Activity implements View.OnClickListener{
 
 
-    private EditText editTextProjectName;
+    private EditText editTextProjectName, editTextRole, editTextProjectDesc;
+    private Button buttonJunior;
+    private Button buttonManger;
+    private Button buttonSenior;
     private Button buttonPost;
+    public String category = new String();
+
 
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -28,7 +33,18 @@ public class NewProject extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_new_project);
 
         editTextProjectName = findViewById(R.id.editTextProjectName);
+        editTextRole = findViewById(R.id.editTextRole);
+        editTextProjectDesc = findViewById(R.id.editTextProjectDesc);
         buttonPost = findViewById(R.id.buttonPost);
+        buttonJunior = findViewById(R.id.buttonJunior);
+        buttonManger = findViewById(R.id.buttonManager);
+        buttonSenior = findViewById(R.id.buttonSenior);
+
+        buttonPost.setOnClickListener(this);
+        buttonJunior.setOnClickListener(this);
+        buttonManger.setOnClickListener(this);
+        buttonSenior.setOnClickListener(this);
+
     }
 
 
@@ -38,10 +54,33 @@ public class NewProject extends Activity implements View.OnClickListener{
     public void onClick(View view) {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Project");
+        final DatabaseReference projectRef = database.getReference("Projects");
 
-        myRef.push().setValue(editTextProjectName.getText().toString());
-        editTextProjectName.setText("");
+
+        if (view == buttonJunior){
+
+            category= "Junior";
+        }
+        else if (view == buttonSenior){
+            category = "Senior";
+        }
+        else if (view == buttonManger){
+            category = "Manager";
+        }
+
+        else if (view == buttonPost){
+
+            String projectName = editTextProjectName.getText().toString();
+            String projectRole = editTextRole.getText().toString();
+            String projectDescription = editTextProjectDesc.getText().toString();
+
+            Project myProject = new Project(projectName, category, projectRole, projectDescription);
+            projectRef.push().setValue(myProject);
+        }
+
+
+        //myRef.push().setValue(editTextProjectName.getText().toString());
+        //editTextProjectName.setText("");
 
 
     }

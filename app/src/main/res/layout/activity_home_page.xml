@@ -240,31 +240,31 @@
         tools:layout_editor_absoluteY="329dp" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/editTextProjectDesc"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Junior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCatSenior"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/buttonCatSenior"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Senior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/button17"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCatManager"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button15"
+        app:layout_constraintStart_toEndOf="@+id/editTextProjectDesc"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/buttonCatManager"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
@@ -272,7 +272,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button16"
+        app:layout_constraintStart_toEndOf="@+id/buttonCatSenior"
         tools:layout_editor_absoluteY="398dp" />
 
     <EditText
