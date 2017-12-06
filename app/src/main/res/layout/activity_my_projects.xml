@@ -131,8 +131,8 @@
         android:text=" Projects I posted:"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="330dp" />
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="340dp" />
 
     <EditText
         android:id="@+id/editText10"
