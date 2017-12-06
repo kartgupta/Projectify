@@ -26,7 +26,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonProfile"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:layout_alignBottom="@+id/textView"
@@ -61,15 +61,15 @@
         android:id="@+id/button4"
         android:layout_width="128dp"
         android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_alignBaseline="@+id/buttonProfile"
+        android:layout_alignBottom="@+id/buttonProfile"
         android:layout_toEndOf="@+id/button3"
         android:layout_toRightOf="@+id/button3"
         android:background="@color/Indigo"
         android:text="My Projects"
         android:textAlignment="center"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonProfile"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toTopOf="@+id/button3" />
@@ -119,8 +119,8 @@
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"
+        android:layout_toLeftOf="@+id/buttonProfile"
+        android:layout_toStartOf="@+id/buttonProfile"
         android:background="@color/White"
         android:src="@drawable/icon_phone_black"
         app:layout_constraintEnd_toStartOf="@+id/imageButton6"

@@ -240,31 +240,31 @@
         tools:layout_editor_absoluteY="329dp" />
 
     <Button
-        android:id="@+id/btnJunior"
+        android:id="@+id/editTextProjectDesc"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Junior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/btnSenior"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCatSenior"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/btnSenior"
+        android:id="@+id/buttonCatSenior"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Senior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/btnManager"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCatManager"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnJunior"
+        app:layout_constraintStart_toEndOf="@+id/editTextProjectDesc"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/btnManager"
+        android:id="@+id/buttonCatManager"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
@@ -272,11 +272,11 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnSenior"
+        app:layout_constraintStart_toEndOf="@+id/buttonCatSenior"
         tools:layout_editor_absoluteY="398dp" />
 
     <EditText
-        android:id="@+id/editTextPjDes"
+        android:id="@+id/editText4"
         android:layout_width="350dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -296,9 +296,9 @@
         android:text="Save"
         android:textColor="@color/White"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPjDes"
+        app:layout_constraintEnd_toStartOf="@+id/editText4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextPjDes"
+        app:layout_constraintStart_toEndOf="@+id/editText4"
         tools:layout_editor_absoluteY="522dp" />
 
     <ImageButton
