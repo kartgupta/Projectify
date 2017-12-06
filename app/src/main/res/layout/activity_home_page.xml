@@ -240,31 +240,31 @@
         tools:layout_editor_absoluteY="329dp" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/btnJunior"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Junior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
+        app:layout_constraintEnd_toStartOf="@+id/btnSenior"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/btnSenior"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
         android:text="Senior"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/button17"
+        app:layout_constraintEnd_toStartOf="@+id/btnManager"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button15"
+        app:layout_constraintStart_toEndOf="@+id/btnJunior"
         tools:layout_editor_absoluteY="398dp" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/btnManager"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:background="@color/White"
@@ -272,11 +272,11 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button16"
+        app:layout_constraintStart_toEndOf="@+id/btnSenior"
         tools:layout_editor_absoluteY="398dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextPjDes"
         android:layout_width="350dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -296,9 +296,9 @@
         android:text="Save"
         android:textColor="@color/White"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPjDes"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText4"
+        app:layout_constraintStart_toEndOf="@+id/editTextPjDes"
         tools:layout_editor_absoluteY="522dp" />
 
     <ImageButton
