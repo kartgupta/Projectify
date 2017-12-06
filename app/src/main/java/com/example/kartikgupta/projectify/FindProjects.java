@@ -23,8 +23,8 @@ public class FindProjects extends Activity {
 
         //listViewFindProjects = findViewById(R.id.listViewFindProjects);
 
-        adapter = new ArrayAdapter<String>(this, R.layout.projectlayout, R.id.textViewProjectName, list);
-        listViewFindProjects.setAdapter(adapter);
+        //adapter = new ArrayAdapter<String>(this, R.layout.projectlayout, R.id.textViewProjectName, list);
+        //listViewFindProjects.setAdapter(adapter);
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = database.getReference("Project");
