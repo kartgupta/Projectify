@@ -21,6 +21,7 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    //test
     private Button buttonLogin, buttonSignup;
     private EditText editTextPassword, editTextUsername;
 
