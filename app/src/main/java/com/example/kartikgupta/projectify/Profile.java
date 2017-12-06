@@ -86,22 +86,24 @@ public class Profile extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        String skill = editTextSkill.getText().toString();
+
+//        String skill = editTextSkill.getText().toString();
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference profileRef = db.getReference(skill);
+        final DatabaseReference profileRef = db.getReference("UserProfile");
 
         if(view == buttonSaveProfile) {
             //user input data
-           // String TextSkill = editTextSkill.getText().toString();
+            String email = editTextUsername.getText().toString();
+            String skill = editTextSkill.getText().toString();
             String interest = editTextInterest.getText().toString();
             String experience = editTextExperience.getText().toString();
             String designation = editTextDesignation.getText().toString();
             String moreInfo = editTextMoreInfo.getText().toString();
-            String email = editTextUsername.getText().toString();
+
             String password = editTextPassword.getText().toString();
 
             //add to db
-            UserProfile newProfile = new UserProfile(skill, interest, experience, designation, moreInfo);
+            UserProfile newProfile = new UserProfile(email, skill, interest, experience, designation, moreInfo);
             profileRef.push().setValue(newProfile);
 
             createAccount(email, password);
@@ -122,12 +124,12 @@ public class Profile extends Activity implements View.OnClickListener{
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(Profile.this, "Registeration Failed",
+                            Toast.makeText(Profile.this, "Your e-mail is wrong or password is less than 6 characters. Try again!",
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(Profile.this, "Registeration Sucessful",
+                            Toast.makeText(Profile.this, "Registeration Sucessful and log in",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intentt = new Intent(Profile.this, FindProjects.class);
+                            Intent intentt = new Intent(Profile.this, ProjectList.class);
                             Profile.this.startActivity(intentt);
 
                         }
