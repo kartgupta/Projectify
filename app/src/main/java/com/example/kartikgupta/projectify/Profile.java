@@ -127,6 +127,8 @@ public class Profile extends Activity implements View.OnClickListener{
                         } else {
                             Toast.makeText(Profile.this, "Registeration Sucessful",
                                     Toast.LENGTH_SHORT).show();
+                            Intent intentt = new Intent(Profile.this, FindProjects.class);
+                            Profile.this.startActivity(intentt);
 
                         }
                     }
