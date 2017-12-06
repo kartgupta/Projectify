@@ -118,7 +118,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         } else {
                             Toast.makeText(MainActivity.this, "authentication sucessful",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intentt = new Intent(MainActivity.this, HomePage.class);
+                            Intent intentt = new Intent(MainActivity.this, ProjectList.class);
                             MainActivity.this.startActivity(intentt);
                         }
                     }
