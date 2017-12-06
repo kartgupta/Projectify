@@ -57,7 +57,7 @@ public class Profile extends Activity implements View.OnClickListener{
             String moreInfo = editTextMoreInfo.getText().toString();
 
             //add to db
-            user newProfile = new user(skill, interest, experience, designation, moreInfo);
+            UserProfile newProfile = new UserProfile(skill, interest, experience, designation, moreInfo);
             profileRef.push().setValue(newProfile);
         }
 
