@@ -27,66 +27,72 @@
         android:id="@+id/imageView"
         android:layout_width="66dp"
         android:layout_height="63dp"
+        android:layout_marginTop="8dp"
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="115dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
         android:gravity="fill_vertical"
         android:text="Skills:"
         android:textColor="@color/Black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="fill_vertical"
         android:text="Experience"
         android:textColor="@color/Black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView6"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginTop="8dp"
         android:gravity="fill_vertical"
         android:text="Designation"
         android:textColor="@color/Black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/editTextUpMoreInfo"
-        app:layout_constraintTop_toTopOf="@+id/editTextUpDesignation" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:text="More Information:"
         android:textColor="@color/Black"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="404dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginTop="12dp"
         android:gravity="fill_vertical"
         android:text="Interests"
         android:textColor="@color/Black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/button2"
@@ -111,19 +117,20 @@
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="68dp" />
+        app:layout_constraintTop_toTopOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="128dp"
         android:layout_height="40dp"
+        android:layout_marginTop="68dp"
         android:background="@color/Indigo"
         android:text="My Projects"
         android:textColor="@color/White"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -138,6 +145,7 @@
         android:id="@+id/editTextUpMoreInfo"
         android:layout_width="353dp"
         android:layout_height="86dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Type more inforamtion about you! anything helps, including hobbies as well as how many hours you can put into the project and other perferenees "
         android:inputType="textMultiLine"
@@ -147,10 +155,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="429dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextSkill"
+        android:id="@+id/editTextUpSkill"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -163,31 +171,34 @@
         android:id="@+id/editTextUpExperience"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Enter number of years"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextUpInterest"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpInterest" />
 
     <EditText
         android:id="@+id/editTextUpInterest"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="AI, Blockchain, etc."
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpSkill"
+        tools:layout_editor_absoluteX="128dp" />
 
     <EditText
         android:id="@+id/editTextUpDesignation"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Junior, Manager, etc."
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextUpExperience"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpExperience" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -198,15 +209,16 @@
         tools:layout_editor_absoluteY="156dp" />
 
     <Button
-        android:id="@+id/buttonSaveProfile"
+        android:id="@+id/buttonUpdateProfile"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="156dp"
-        android:text="Button"
+        android:layout_marginTop="8dp"
+        android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="540dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpMoreInfo" />
 
 </android.support.constraint.ConstraintLayout>
