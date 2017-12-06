@@ -81,30 +81,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //call the sigin method
             signIn(email, password);
         } else if (view == buttonSignup){
-            //call the create account method
-            createAccount(email, password);
+            //if clicked, send me to profile page
+            Intent intentt = new Intent(MainActivity.this, Profile.class);
+            MainActivity.this.startActivity(intentt);
         }
     }
 
-    public void createAccount(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        // If signin fails, display a message to the user. If signin succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "Registeration Failed",
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Registeration Sucessful",
-                                    Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                });
-    }
     public void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
