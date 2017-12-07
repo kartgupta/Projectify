@@ -70,7 +70,7 @@
         android:textColor="@color/Black"
         android:textColorHint="@color/Gray"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

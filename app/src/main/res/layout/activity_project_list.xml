@@ -7,11 +7,13 @@
     tools:context="com.example.kartikgupta.projectify.ProjectList">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="386dp"
         android:layout_height="109dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@color/Indigo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -19,11 +21,13 @@
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="320dp"
-        android:layout_height="42dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="@color/White"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/buttonProfile"
@@ -61,8 +65,7 @@
         android:id="@+id/buttonMyProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/buttonProfile"
-        android:layout_alignBottom="@+id/buttonProfile"
+        android:layout_alignBottom="@+id/buttonProject"
         android:layout_toEndOf="@+id/buttonProject"
         android:layout_toRightOf="@+id/buttonProject"
         android:background="@color/Indigo"
@@ -74,17 +77,8 @@
         app:layout_constraintStart_toEndOf="@+id/buttonProject"
         app:layout_constraintTop_toTopOf="@+id/buttonProject" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/searchView"
-        android:layout_toEndOf="@+id/searchView"
-        android:layout_toRightOf="@+id/searchView"
-        android:background="@color/Indigo"
-        android:src="@drawable/icon_post"
-        tools:layout_editor_absoluteX="335dp"
-        tools:layout_editor_absoluteY="16dp" />
+
+
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -105,8 +99,10 @@
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/imageButton3"
-        android:layout_toRightOf="@+id/imageButton3"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/imageButton5"
+        android:layout_toStartOf="@+id/imageButton5"
         android:background="@color/White"
         android:src="@drawable/icon_computer_black"
         app:layout_constraintEnd_toStartOf="@+id/imageButton5"
@@ -119,8 +115,10 @@
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/buttonProfile"
-        android:layout_toStartOf="@+id/buttonProfile"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_toLeftOf="@+id/imageButton6"
+        android:layout_toStartOf="@+id/imageButton6"
         android:background="@color/White"
         android:src="@drawable/icon_phone_black"
         app:layout_constraintEnd_toStartOf="@+id/imageButton6"
@@ -135,8 +133,6 @@
         android:layout_alignEnd="@+id/imageButton2"
         android:layout_alignRight="@+id/imageButton2"
         android:layout_below="@+id/textView"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
         android:background="@color/White"
         android:src="@drawable/icon_security_black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +147,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageButton3" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/searchView"
+        android:layout_toEndOf="@+id/searchView"
+        android:layout_toRightOf="@+id/searchView"
+        android:background="@color/Indigo"
+        android:src="@drawable/icon_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </RelativeLayout>
