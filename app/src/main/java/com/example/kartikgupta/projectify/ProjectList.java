@@ -1,8 +1,11 @@
 package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -17,6 +20,11 @@ import java.util.ArrayList;
 public class ProjectList extends Activity {
 
     private ListView listViewFindProjects;
+    //add menu bar
+    private Button buttonMyProject;
+    private Button buttonProfile;
+    private Button buttonProject;
+    //menu bar end
 
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -26,6 +34,43 @@ public class ProjectList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_list);
         listViewFindProjects = findViewById(R.id.listViewFindProjects);
+
+        //menu bar
+        buttonProfile = (Button) findViewById(R.id.buttonProfile);
+        buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
+        buttonProject = (Button) findViewById(R.id.buttonProject);
+
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(ProjectList.this, UpdateProfile.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonMyProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(ProjectList.this, MyProjects.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(ProjectList.this, ProjectList.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //menu bar end
 
         adapter = new ArrayAdapter<String>(this, R.layout.projectlayout, R.id.textViewProjectName, list);
         listViewFindProjects.setAdapter(adapter);
