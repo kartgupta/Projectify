@@ -48,15 +48,15 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
         buttonProject = (Button) findViewById(R.id.buttonProject);
         imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
-        imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(UpdateProfileWrite.this, NewProject.class);
-                startActivity(intent);
-
-            }
-        });
+//        imageButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent();
+//                intent.setClass(UpdateProfileWrite.this, NewProject.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
