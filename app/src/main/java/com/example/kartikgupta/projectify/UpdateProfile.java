@@ -2,13 +2,20 @@ package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +35,9 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
     private Button buttonProfile;
     private Button buttonProject;
     //menu bar end
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,65 +100,107 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         TextViewUpMoreInfo = findViewById(R.id.TextViewUpMoreInfo);
         textViewEmail = findViewById(R.id.textViewEmail);
 
-        ///test
+        ///test2
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            final String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
 
-        final String email = "abcd@umich.edu";
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference userRef = db.getReference("UserProfile");
-        userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getValue() == null) {
-                    TextViewUpSkill.setText("You haven't added profile yet" );
-//                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
-                }else {
-                    userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
 
-                        @Override
-                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                            UserProfile finduser = new UserProfile();
-                            finduser = dataSnapshot.getValue(UserProfile.class);
-//                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
-                            textViewEmail.setText(finduser.email);
-                            TextViewUpSkill.setText(finduser.skill);
-                            TextViewUpInterest.setText(finduser.interest);
-                            TextViewUpExperience.setText(finduser.experience);
-                            TextViewUpDesignation.setText(finduser.designation);
-                            TextViewUpMoreInfo.setText(finduser.moreInfo);
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
 
 
-                        }
 
-                        @Override
-                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            //test
 
-                        }
+    //        final String email = "bill@umich.edu";
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
 
-                        @Override
-                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+            final DatabaseReference userRef = db.getReference("UserProfile");
+            //dd
+    //        userRef.child("UserProfile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+    //            @Override
+    //            public void onDataChange(DataSnapshot dataSnapshot) {
+    //                if(dataSnapshot.exists())
+    //                {
+    //                    for(DataSnapshot userDetails : dataSnapshot.getChildren()) {
+    //
+    //                        Log.d("valueEmail:", userDetails.child("email").getValue());
+    //
+    //                    }
+    //                }
+    //            }
+    //
+    //            @Override
+    //            public void onCancelled(DatabaseError databaseError) {
+    //
+    //            }
+    //        });
+            //dd
 
-                        }
 
-                        @Override
-                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.getValue() == null) {
+                        TextViewUpSkill.setText("You haven't added profile yet" );
+    //                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
+                    }else {
+                        userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
 
-                        }
+                            @Override
+                            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                                UserProfile finduser = new UserProfile();
+                                finduser = dataSnapshot.getValue(UserProfile.class);
+    //                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
+                                textViewEmail.setText(finduser.email);
+                                TextViewUpSkill.setText(finduser.skill);
+                                TextViewUpInterest.setText(finduser.interest);
+                                TextViewUpExperience.setText(finduser.experience);
+                                TextViewUpDesignation.setText(finduser.designation);
+                                TextViewUpMoreInfo.setText(finduser.moreInfo);
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
 
-                        }
-                    });
+                            }
+
+                            @Override
+                            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                            }
+
+                            @Override
+                            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                            }
+
+                            @Override
+                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
 
-        ///test end
+            ///test end
+        }
     }
 
     @Override
