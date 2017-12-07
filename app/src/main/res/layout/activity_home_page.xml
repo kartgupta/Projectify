@@ -42,7 +42,7 @@
         android:background="@color/Indigo"
         android:text="Projects"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMyProject"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="69dp" />

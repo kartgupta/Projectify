@@ -19,9 +19,10 @@
         android:layout_width="320dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="@color/White"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -31,7 +32,7 @@
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonMyProject" />
 
     <TextView
         android:id="@+id/textView3"
@@ -44,7 +45,7 @@
         android:textColor="@color/Black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonProject" />
 
     <TextView
         android:id="@+id/textView4"
@@ -104,23 +105,23 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMyProject"
+        app:layout_constraintTop_toTopOf="@+id/buttonMyProject" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:background="@color/Indigo"
         android:text="Projects"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMyProject"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintTop_toTopOf="@+id/buttonMyProject" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonMyProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:layout_marginTop="68dp"
@@ -129,17 +130,19 @@
         android:textColor="@color/White"
         app:layout_constraintEnd_toStartOf="@+id/buttonProfile"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/buttonProject"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="43dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
         android:background="@color/Indigo"
         android:src="@drawable/icon_post"
-        tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextUpMoreInfo"
@@ -151,20 +154,21 @@
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        tools:layout_editor_absoluteX="17dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/editTextUpSkill"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Java, Web, etc."
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:layout_editor_absoluteY="204dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/editTextUpExperience"

@@ -44,9 +44,10 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             String experience = editTextUpExperience.getText().toString();
             String designation = editTextUpDesignation.getText().toString();
             String moreInfo = editTextUpMoreInfo.getText().toString();
+            String email = editTextUpMoreInfo.getText().toString();
 
             //add to db
-            UserProfile newProfile = new UserProfile(skill, interest, experience, designation, moreInfo);
+            UserProfile newProfile = new UserProfile(email, skill, interest, experience, designation, moreInfo);
             profileRef.push().setValue(newProfile);
         }
 

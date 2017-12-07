@@ -37,11 +37,11 @@
         android:textColor="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMyProject"
+        app:layout_constraintTop_toTopOf="@+id/buttonMyProject" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:layout_above="@+id/imageButton3"
@@ -52,27 +52,27 @@
         android:textAlignment="center"
         android:textColor="@color/White"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMyProject"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="68dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonMyProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
         android:layout_alignBaseline="@+id/buttonProfile"
         android:layout_alignBottom="@+id/buttonProfile"
-        android:layout_toEndOf="@+id/button3"
-        android:layout_toRightOf="@+id/button3"
+        android:layout_toEndOf="@+id/buttonProject"
+        android:layout_toRightOf="@+id/buttonProject"
         android:background="@color/Indigo"
         android:text="My Projects"
         android:textAlignment="center"
         android:textColor="@color/White"
         app:layout_constraintEnd_toStartOf="@+id/buttonProfile"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/buttonProject"
+        app:layout_constraintTop_toTopOf="@+id/buttonProject" />
 
     <ImageButton
         android:id="@+id/imageButton2"
