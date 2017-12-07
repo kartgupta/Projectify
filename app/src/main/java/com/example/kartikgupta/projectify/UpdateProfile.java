@@ -100,7 +100,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         TextViewUpMoreInfo = findViewById(R.id.TextViewUpMoreInfo);
         textViewEmail = findViewById(R.id.textViewEmail);
 
-        ///test2
+        ///find user account information
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // Name, email address, and profile photo Url
@@ -117,35 +117,11 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             String uid = user.getUid();
 
 
-
             //test
 
-    //        final String email = "bill@umich.edu";
             FirebaseDatabase db = FirebaseDatabase.getInstance();
 
             final DatabaseReference userRef = db.getReference("UserProfile");
-            //dd
-    //        userRef.child("UserProfile").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
-    //            @Override
-    //            public void onDataChange(DataSnapshot dataSnapshot) {
-    //                if(dataSnapshot.exists())
-    //                {
-    //                    for(DataSnapshot userDetails : dataSnapshot.getChildren()) {
-    //
-    //                        Log.d("valueEmail:", userDetails.child("email").getValue());
-    //
-    //                    }
-    //                }
-    //            }
-    //
-    //            @Override
-    //            public void onCancelled(DatabaseError databaseError) {
-    //
-    //            }
-    //        });
-            //dd
-
-
             userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
