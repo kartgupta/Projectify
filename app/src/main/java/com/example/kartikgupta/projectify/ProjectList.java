@@ -42,7 +42,7 @@ public class ProjectList extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
-        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,10 +128,13 @@ public class ProjectList extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ProjectList.this, Project1.class);
                 startActivity(intent);
+                //i.putExtra()
             }
         });
 
     }
+
+    //go to new project when click on the icon at top right corner
     public void CreatProject(View view){
         Intent intent = new Intent();
         intent.setClass(ProjectList.this, NewProject.class);

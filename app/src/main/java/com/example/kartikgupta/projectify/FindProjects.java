@@ -33,7 +33,7 @@ public class FindProjects extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
-        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
