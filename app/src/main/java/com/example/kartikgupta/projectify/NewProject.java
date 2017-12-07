@@ -45,16 +45,16 @@ public class NewProject extends Activity implements View.OnClickListener{
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
         imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
-
-        imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(NewProject.this, NewProject.class);
-                startActivity(intent);
-
-            }
-        });
+//
+//        imageButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent();
+//                intent.setClass(NewProject.this, NewProject.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
