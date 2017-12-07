@@ -139,8 +139,9 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if(dataSnapshot.getValue() == null) {
-                        TextViewUpSkill.setText("You haven't added profile yet" );
+//                        TextViewUpSkill.setText("You haven't added profile yet" );
     //                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
+
                     }else {
                         userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
 
@@ -148,6 +149,8 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
                             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                                 UserProfile finduser = new UserProfile();
                                 finduser = dataSnapshot.getValue(UserProfile.class);
+
+
     //                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
                                 textViewEmail.setText(finduser.email);
                                 TextViewUpSkill.setText(finduser.skill);
