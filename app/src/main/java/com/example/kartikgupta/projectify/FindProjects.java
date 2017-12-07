@@ -1,9 +1,11 @@
 package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -11,6 +13,11 @@ import java.util.ArrayList;
 public class FindProjects extends Activity {
 
     private ListView listViewFindProjects;
+    //add menu bar
+    private Button buttonMyProject;
+    private Button buttonProfile;
+    private Button buttonProject;
+    //menu bar end
 
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -19,6 +26,43 @@ public class FindProjects extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_projects);
+
+        //menu bar
+        buttonProfile = (Button) findViewById(R.id.buttonProfile);
+        buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
+        buttonProject = (Button) findViewById(R.id.buttonProject);
+
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(FindProjects.this, UpdateProfile.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonMyProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(FindProjects.this, MyProjects.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(FindProjects.this, ProjectList.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //menu bar end
 
 
         //listViewFindProjects = findViewById(R.id.listViewFindProjects);
