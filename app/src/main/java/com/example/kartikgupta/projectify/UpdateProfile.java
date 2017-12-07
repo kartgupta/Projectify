@@ -21,7 +21,7 @@ import org.w3c.dom.Text;
 
 public class UpdateProfile extends Activity implements View.OnClickListener{
 
-    private TextView TextViewUpSkill, TextViewUpInterest, TextViewUpExperience, TextViewUpDesignation, TextViewUpMoreInfo;
+    private TextView TextViewUpSkill, TextViewUpInterest, TextViewUpExperience, TextViewUpDesignation, TextViewUpMoreInfo, textViewEmail;
     private Button buttonUpdate;
     //add menu bar
     private Button buttonMyProject;
@@ -88,30 +88,33 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         TextViewUpExperience = findViewById(R.id.TextViewUpExperience);
         TextViewUpDesignation = findViewById(R.id.TextViewUpDesignation);
         TextViewUpMoreInfo = findViewById(R.id.TextViewUpMoreInfo);
+        textViewEmail = findViewById(R.id.textViewEmail);
 
         ///test
 
-//        final String email = "abcd@umich.edu";
+        final String email = "abcd@umich.edu";
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference userRef = db.getReference("email");
-        userRef.orderByChild("UserProfile").equalTo("email").addValueEventListener(new ValueEventListener() {
+        final DatabaseReference userRef = db.getReference("UserProfile");
+        userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.getValue() == null) {
                     TextViewUpSkill.setText("You haven't added profile yet" );
 //                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
                 }else {
-                    userRef.orderByChild("UserProfile").equalTo("email").addChildEventListener(new ChildEventListener() {
+                    userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
 
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                             UserProfile finduser = new UserProfile();
                             finduser = dataSnapshot.getValue(UserProfile.class);
 //                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
+                            textViewEmail.setText(finduser.email);
                             TextViewUpSkill.setText(finduser.skill);
                             TextViewUpInterest.setText(finduser.interest);
                             TextViewUpExperience.setText(finduser.experience);
                             TextViewUpDesignation.setText(finduser.designation);
+                            TextViewUpMoreInfo.setText(finduser.moreInfo);
 
 
                         }
