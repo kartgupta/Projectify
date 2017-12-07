@@ -6,8 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class Project1 extends Activity {
+
+    private TextView textViewProjectName, textViewDescription;
+
+
+
+
     //add menu bar
     private Button buttonMyProject;
     private Button buttonProfile;
@@ -18,6 +28,9 @@ public class Project1 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project1);
+
+        textViewProjectName = (TextView) findViewById(R.id.textViewProjectName);
+        textViewDescription = (TextView) findViewById(R.id.textViewDescription);
 
         //menu bar
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
@@ -67,5 +80,13 @@ public class Project1 extends Activity {
         });
 
         //menu bar end
+
+        Intent intent = getIntent();
+        String ValueInList = intent.getStringExtra("value");
+        //Toast.makeText(Project1.this, "text"+position, Toast.LENGTH_SHORT).show();
+        //textViewProjectName.setText("test");
+        if(ValueInList!=null) {
+            textViewProjectName.setText(ValueInList);
+        }
     }
 }

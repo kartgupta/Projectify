@@ -77,42 +77,26 @@
 
     <TextView
         android:id="@+id/textViewProjectName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Communities in Schools of San Antonio"
-        android:textColor="@color/Black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textViewProjectCategory"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.209" />
-
-    <TextView
-        android:id="@+id/textViewProjectCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="309dp"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ecommerce"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.211" />
 
     <TextView
         android:id="@+id/textViewDescriptionContent"
         android:layout_width="350dp"
         android:layout_height="251dp"
-        android:text="Communities of Schools in San Antonio is a network of passionate professionals working in public schools to surround students with a community of support, empowering them to stay in school and achieve in life
-Understanding the importance of Bill’s message, the Communities In Schools model was brought to San Antonio in 1985 thanks to forward-thinking community leaders.
-Today, Communities In Schools is the nation’s largest and most effective organization dedicated to keeping kids in school and helping them succeed in life. We partner with local businesses, social service agencies, health care providers and volunteers."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +116,7 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintVertical_bias="0.323" />

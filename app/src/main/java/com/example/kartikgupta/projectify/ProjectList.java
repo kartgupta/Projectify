@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -126,9 +127,14 @@ public class ProjectList extends Activity {
         listViewFindProjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Toast.makeText(ProjectList.this, "text"+position, Toast.LENGTH_SHORT).show();
+                int position = i;
+                String value = listViewFindProjects.getItemAtPosition(position).toString();
+                //Toast.makeText(ProjectList.this, "text"+value, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ProjectList.this, Project1.class);
+                intent.putExtra("value", value);
                 startActivity(intent);
-                //i.putExtra()
+
             }
         });
 
