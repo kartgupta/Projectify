@@ -2,13 +2,19 @@ package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -18,11 +24,16 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
 
     private EditText editTextUpSkill, editTextUpInterest, editTextUpExperience, editTextUpDesignation, editTextUpMoreInfo;
     private Button buttonUpdate;
+    private TextView textViewEmail;
+
     //add menu bar
     private Button buttonMyProject;
     private Button buttonProfile;
     private Button buttonProject;
     //menu bar end
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,32 +84,178 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
         editTextUpDesignation = findViewById(R.id.editTextUpDesignation);
         editTextUpMoreInfo = findViewById(R.id.editTextUpMoreInfo);
         buttonUpdate = findViewById(R.id.buttonUpdateProfile);
+        textViewEmail = findViewById(R.id.textViewEmail);
+
 
         buttonUpdate.setOnClickListener(this);
+
+
+
+        ///find user account information
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            final String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
+
+
+            //test
+
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
+
+            final DatabaseReference userRef = db.getReference("UserProfile");
+            userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.getValue() == null) {
+                        editTextUpSkill.setText("You haven't added profile yet" );
+                        //                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
+                    }else {
+                        userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
+
+                            @Override
+                            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                                UserProfile finduser = new UserProfile();
+                                finduser = dataSnapshot.getValue(UserProfile.class);
+                                //                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
+                                textViewEmail.setText(finduser.email);
+                                editTextUpSkill.setText(finduser.skill);
+                                editTextUpInterest.setText(finduser.interest);
+                                editTextUpExperience.setText(finduser.experience);
+                                editTextUpDesignation.setText(finduser.designation);
+                                editTextUpMoreInfo.setText(finduser.moreInfo);
+                            }
+
+                            @Override
+                            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                            }
+
+                            @Override
+                            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                            }
+
+                            @Override
+                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+            ///test end
+        }
+
+
     }
 
     @Override
     public void onClick(View view) {
 
-        String skill = editTextUpSkill.getText().toString();
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference profileRef = db.getReference(skill);
+        //
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            final String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
 
-        if(view == buttonUpdate) {
-            //user input data
-//            String TextSkill = editTextSkill.getText().toString();
-            String interest = editTextUpInterest.getText().toString();
-            String experience = editTextUpExperience.getText().toString();
-            String designation = editTextUpDesignation.getText().toString();
-            String moreInfo = editTextUpMoreInfo.getText().toString();
-            String email = editTextUpMoreInfo.getText().toString();
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
 
-            //add to db
-            UserProfile newProfile = new UserProfile(email, skill, interest, experience, designation, moreInfo);
-            profileRef.push().setValue(newProfile);
-        }
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
+
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
+            final DatabaseReference userRef = db.getReference("UserProfile");
+            if (view == buttonUpdate) {
+                final String newSkill = editTextUpSkill.getText().toString();
+                final String newInterest = editTextUpInterest.getText().toString();
+                final String newExperience = editTextUpExperience.getText().toString();
+                final String newDesignation = editTextUpDesignation.getText().toString();
+                final String newMoreInfo = editTextUpMoreInfo.getText().toString();
 
 
+                //                                editTextUpSkill.setText(finduser.skill);
+                //                                editTextUpInterest.setText(finduser.interest);
+                //                                editTextUpExperience.setText(finduser.experience);
+                //                                editTextUpDesignation.setText(finduser.designation);
+                //                                editTextUpMoreInfo.setText(finduser.moreInfo);
 
+                userRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() == null) {
+                            Toast.makeText(UpdateProfileWrite.this, "profile not found", Toast.LENGTH_SHORT).show();
+                        } else {
+                            userRef.orderByChild("email").equalTo(email).addChildEventListener(new ChildEventListener() {
+                                @Override
+                                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                                    String userKey = dataSnapshot.getKey();
+                                    userRef.child(userKey).child("skill").setValue(newSkill);
+                                    userRef.child(userKey).child("interest").setValue(newInterest);
+                                    userRef.child(userKey).child("experience").setValue(newExperience);
+                                    userRef.child(userKey).child("designation").setValue(newDesignation);
+                                    userRef.child(userKey).child("moreInfo").setValue(newMoreInfo);
+
+                                    Intent intentt = new Intent(UpdateProfileWrite.this, UpdateProfile.class);
+                                    UpdateProfileWrite.this.startActivity(intentt);
+                                }
+
+                                @Override
+                                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                                }
+
+                                @Override
+                                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                                }
+
+                                @Override
+                                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+
+        }//
     }
 }
