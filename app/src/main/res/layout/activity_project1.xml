@@ -26,7 +26,7 @@
         android:layout_marginLeft="16dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnCreateProject"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
@@ -79,25 +79,32 @@
         android:id="@+id/textViewProjectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:text="Communities in Schools of San Antonio"
         android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewProjectCategory"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMyProject" />
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.209" />
 
     <TextView
         android:id="@+id/textViewProjectCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Ecommerce"
-        app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
-        app:layout_constraintStart_toStartOf="@+id/textViewDescription"
-        app:layout_constraintTop_toBottomOf="@+id/textViewProjectName"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
 
     <TextView
         android:id="@+id/textViewDescriptionContent"
@@ -107,6 +114,7 @@
 Understanding the importance of Bill’s message, the Communities In Schools model was brought to San Antonio in 1985 thanks to forward-thinking community leaders.
 Today, Communities In Schools is the nation’s largest and most effective organization dedicated to keeping kids in school and helping them succeed in life. We partner with local businesses, social service agencies, health care providers and volunteers."
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
@@ -114,23 +122,39 @@ Today, Communities In Schools is the nation’s largest and most effective organ
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Description"
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textViewDescriptionContent"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.323" />
 
     <TextView
         android:id="@+id/textViewRules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Open Roles:"
         android:textColor="@color/Black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.854" />
 
     <TextView
         android:id="@+id/textView14"
@@ -147,14 +171,22 @@ HTML, CSS"
         android:id="@+id/button22"
         android:layout_width="109dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@color/Indigo"
         android:text="Apply"
         android:textAllCaps="false"
         android:textColor="@color/White"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textViewDescriptionContent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916" />
 
     <Button
         android:id="@+id/buttonRole"
