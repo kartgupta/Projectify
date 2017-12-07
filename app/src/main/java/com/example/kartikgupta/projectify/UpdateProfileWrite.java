@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class UpdateProfile extends Activity implements View.OnClickListener{
+public class UpdateProfileWrite extends Activity implements View.OnClickListener{
 
     private EditText editTextUpSkill, editTextUpInterest, editTextUpExperience, editTextUpDesignation, editTextUpMoreInfo;
     private Button buttonUpdate;
@@ -38,7 +38,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(UpdateProfile.this, UpdateProfile.class);
+                intent.setClass(UpdateProfileWrite.this, UpdateProfile.class);
                 startActivity(intent);
 
             }
@@ -48,7 +48,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(UpdateProfile.this, MyProjects.class);
+                intent.setClass(UpdateProfileWrite.this, MyProjects.class);
                 startActivity(intent);
 
             }
@@ -58,7 +58,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(UpdateProfile.this, ProjectList.class);
+                intent.setClass(UpdateProfileWrite.this, ProjectList.class);
                 startActivity(intent);
 
             }
