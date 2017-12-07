@@ -110,4 +110,9 @@ public class ProjectList extends Activity {
         });
 
     }
+    public void CreatProject(View view){
+        Intent intent = new Intent();
+        intent.setClass(ProjectList.this, NewProject.class);
+        startActivity(intent);
+    }
 }

@@ -130,8 +130,8 @@
         android:id="@+id/imageButton6"
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_alignEnd="@+id/imageButton2"
-        android:layout_alignRight="@+id/imageButton2"
+        android:layout_alignEnd="@+id/btnCreateProject"
+        android:layout_alignRight="@+id/btnCreateProject"
         android:layout_below="@+id/textView"
         android:background="@color/White"
         android:src="@drawable/icon_security_black"
@@ -149,7 +149,7 @@
         android:layout_below="@+id/imageButton3" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnCreateProject"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_alignTop="@+id/searchView"
@@ -157,6 +157,7 @@
         android:layout_toRightOf="@+id/searchView"
         android:background="@color/Indigo"
         android:src="@drawable/icon_post"
+        android:onClick="CreatProject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
