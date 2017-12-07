@@ -100,6 +100,7 @@ public class ProjectList extends Activity {
                 Project project = new Project();
                 project = dataSnapshot.getValue(Project.class);
                 list.add(0, project.projectName);
+                //list.add(0, project.projectDescription);
                 adapter.notifyDataSetChanged();
             }
 
