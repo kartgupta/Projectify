@@ -1,6 +1,7 @@
 package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,11 @@ public class NewProject extends Activity implements View.OnClickListener{
     private Button buttonManger;
     private Button buttonSenior;
     private Button buttonPost;
+    //add menu bar
+    private Button buttonMyProject;
+    private Button buttonProfile;
+    private Button buttonProject;
+    //menu bar end
     public String category = new String();
 
 
@@ -31,6 +37,43 @@ public class NewProject extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_project);
+
+        //menu bar
+        buttonProfile = (Button) findViewById(R.id.buttonProfile);
+        buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
+        buttonProject = (Button) findViewById(R.id.buttonProject);
+
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(NewProject.this, UpdateProfile.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonMyProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(NewProject.this, MyProjects.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(NewProject.this, ProjectList.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //menu bar end
 
         editTextProjectName = findViewById(R.id.editTextProjectName);
         editTextRole = findViewById(R.id.editTextRole);

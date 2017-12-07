@@ -21,16 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomePage" />
         <activity android:name=".Profile" />
         <activity android:name=".FindProjects" />
         <activity android:name=".Project1" />
-        <activity android:name=".Project1Applied" />
         <activity android:name=".MyProjects" />
         <activity android:name=".MyProjects1Details" />
         <activity android:name=".NewProject" />
         <activity android:name=".ProjectList" />
-        <activity android:name=".UpdateProfile"></activity>
+        <activity android:name=".UpdateProfile" />
+        <activity android:name=".UpdateProfileWrite"></activity>
     </application>
 
 </manifest>
