@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
     private Button buttonMyProject;
     private Button buttonProfile;
     private Button buttonProject;
+    private ImageButton imageButton2;
     //menu bar end
 
     private FirebaseAuth mAuth;
@@ -44,6 +46,18 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
+        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UpdateProfileWrite.this, NewProject.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +88,8 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
 
             }
         });
+
+
 
         //menu bar end
 

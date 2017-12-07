@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -24,6 +25,7 @@ public class ProjectList extends Activity {
     private Button buttonMyProject;
     private Button buttonProfile;
     private Button buttonProject;
+    private ImageButton imageButton2;
     //menu bar end
 
     ArrayList<String> list = new ArrayList<>();
@@ -39,6 +41,17 @@ public class ProjectList extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
+        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(ProjectList.this, NewProject.class);
+                startActivity(intent);
+
+            }
+        });
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
