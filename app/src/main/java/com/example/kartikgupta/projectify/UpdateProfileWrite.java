@@ -27,7 +27,7 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_profile);
+        setContentView(R.layout.activity_update_profile_write);
 
         //menu bar
         buttonProfile = (Button) findViewById(R.id.buttonProfile);

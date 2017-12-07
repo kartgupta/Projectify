@@ -86,14 +86,14 @@ public class Profile extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-
+        String email = editTextUsername.getText().toString();
 //        String skill = editTextSkill.getText().toString();
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         final DatabaseReference profileRef = db.getReference("UserProfile");
 
         if(view == buttonSaveProfile) {
             //user input data
-            String email = editTextUsername.getText().toString();
+//            String email = editTextUsername.getText().toString();
             String skill = editTextSkill.getText().toString();
             String interest = editTextInterest.getText().toString();
             String experience = editTextExperience.getText().toString();

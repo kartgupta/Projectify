@@ -6,17 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 
 public class UpdateProfile extends Activity implements View.OnClickListener{
 
-    private EditText editTextUpSkill, editTextUpInterest, editTextUpExperience, editTextUpDesignation, editTextUpMoreInfo;
+    private TextView TextViewUpSkill, TextViewUpInterest, TextViewUpExperience, TextViewUpDesignation, TextViewUpMoreInfo;
     private Button buttonUpdate;
     //add menu bar
     private Button buttonMyProject;
@@ -33,6 +38,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
+        buttonUpdate = (Button) findViewById(R.id.buttonUpdateProfile);
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,39 +70,86 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             }
         });
 
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UpdateProfile.this, UpdateProfileWrite.class);
+                startActivity(intent);
+
+            }
+        });
+
+
         //menu bar end
 
+        TextViewUpSkill = findViewById(R.id.TextViewUpSkill);
+        TextViewUpInterest = findViewById(R.id.TextViewUpInterest);
+        TextViewUpExperience = findViewById(R.id.TextViewUpExperience);
+        TextViewUpDesignation = findViewById(R.id.TextViewUpDesignation);
+        TextViewUpMoreInfo = findViewById(R.id.TextViewUpMoreInfo);
 
-        editTextUpSkill = findViewById(R.id.editTextUpSkill);
-        editTextUpInterest = findViewById(R.id.editTextUpInterest);
-        editTextUpExperience = findViewById(R.id.editTextUpExperience);
-        editTextUpDesignation = findViewById(R.id.editTextUpDesignation);
-        editTextUpMoreInfo = findViewById(R.id.editTextUpMoreInfo);
-        buttonUpdate = findViewById(R.id.buttonUpdateProfile);
+        ///test
 
-        buttonUpdate.setOnClickListener(this);
+//        final String email = "abcd@umich.edu";
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        final DatabaseReference userRef = db.getReference("email");
+        userRef.orderByChild("UserProfile").equalTo("email").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue() == null) {
+                    TextViewUpSkill.setText("You haven't added profile yet" );
+//                        Toast.makeText(Main2Activity.this, "card not found", Toast.LENGTH_SHORT).show();
+                }else {
+                    userRef.orderByChild("UserProfile").equalTo("email").addChildEventListener(new ChildEventListener() {
+
+                        @Override
+                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                            UserProfile finduser = new UserProfile();
+                            finduser = dataSnapshot.getValue(UserProfile.class);
+//                                Toast.makeText(MainActivity.this, "Card limit is: "+findcard.cardLimit, Toast.LENGTH_SHORT).show();
+                            TextViewUpSkill.setText(finduser.skill);
+                            TextViewUpInterest.setText(finduser.interest);
+                            TextViewUpExperience.setText(finduser.experience);
+                            TextViewUpDesignation.setText(finduser.designation);
+
+
+                        }
+
+                        @Override
+                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ///test end
     }
 
     @Override
     public void onClick(View view) {
-
-        String skill = editTextUpSkill.getText().toString();
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference profileRef = db.getReference(skill);
-
-        if(view == buttonUpdate) {
-            //user input data
-//            String TextSkill = editTextSkill.getText().toString();
-            String interest = editTextUpInterest.getText().toString();
-            String experience = editTextUpExperience.getText().toString();
-            String designation = editTextUpDesignation.getText().toString();
-            String moreInfo = editTextUpMoreInfo.getText().toString();
-            String email = editTextUpMoreInfo.getText().toString();
-
-            //add to db
-            UserProfile newProfile = new UserProfile(email, skill, interest, experience, designation, moreInfo);
-            profileRef.push().setValue(newProfile);
-        }
 
 
 
