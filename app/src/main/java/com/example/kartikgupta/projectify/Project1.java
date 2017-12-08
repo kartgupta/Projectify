@@ -124,7 +124,7 @@ public class Project1 extends Activity implements View.OnClickListener{
                         String useremail = user.getEmail();
                         Boolean Availability = project.projectAvailable;
                         String Applicant = project.projectApplicants;
-                        Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
                         if((!Availability) && (!useremail.equals(Applicant))) {
                             buttonApply.setText("Not Available");
                             buttonApply.setBackgroundColor(Color.GRAY);
