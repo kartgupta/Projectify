@@ -2,6 +2,7 @@ package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -119,7 +120,18 @@ public class Project1 extends Activity implements View.OnClickListener{
                         //Toast.makeText(Project1.this, "text"+project.projectDescription, Toast.LENGTH_SHORT).show();
                         textViewDescription.setText(project.projectDescription.toString());
                         textViewRole.setText(project.projectRole.toString());
-
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String useremail = user.getEmail();
+                        Boolean Availability = project.projectAvailable;
+                        String Applicant = project.projectApplicants;
+                        Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
+                        if((!Availability) && (!useremail.equals(Applicant))) {
+                            buttonApply.setText("Not Available");
+                            buttonApply.setBackgroundColor(Color.GRAY);
+                        } else if((!Availability) && (useremail.equals(Applicant))) {
+                            buttonApply.setText("Applied");
+                            buttonApply.setBackgroundColor(Color.GRAY);
+                        }
                     }
 
                     @Override
@@ -192,6 +204,8 @@ public class Project1 extends Activity implements View.OnClickListener{
                                 pjRef.child(projectKey).child("projectApplicants").setValue(useremail);
                                 //SystemClock.sleep(1000);
                                 pjRef.child(projectKey).child("projectAvailable").setValue(false);
+                                buttonApply.setText("Applied");
+                                buttonApply.setBackgroundColor(Color.GRAY);
                             }
 
 
