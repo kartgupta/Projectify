@@ -23,7 +23,7 @@ public class MyProjects extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
-        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
+ //       imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
 //        imageButton2.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -66,5 +66,12 @@ public class MyProjects extends Activity {
         });
 
         //menu bar end
+    }
+
+    //go to new project when click on the icon at top right corner
+    public void CreatProject(View view){
+        Intent intent = new Intent();
+        intent.setClass(MyProjects.this, NewProject.class);
+        startActivity(intent);
     }
 }

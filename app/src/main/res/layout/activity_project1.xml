@@ -136,18 +136,19 @@
         app:layout_constraintVertical_bias="0.858" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="140dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="12dp"
-        android:text="Front-end Developer
-HTML, CSS"
+        android:id="@+id/textViewRole"
+        android:layout_width="187dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonRole"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRules" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/btnApply"
         android:layout_width="109dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -166,19 +167,5 @@ HTML, CSS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.928" />
-
-    <Button
-        android:id="@+id/buttonRole"
-        android:layout_width="39dp"
-        android:layout_height="21dp"
-        android:background="@android:color/transparent"
-        android:text="SWE"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textColor="@color/Indigo"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textViewRules"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRules" />
 
 </android.support.constraint.ConstraintLayout>

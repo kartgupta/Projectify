@@ -7,18 +7,17 @@ import android.widget.Button;
  */
 
 public class Project {
-    public String projectName, projectCategory, projectRole, projectDescription, projectSkills;
-    //add menu bar
-    private Button buttonMyProject;
-    private Button buttonProfile;
-    private Button buttonProject;
-    //menu bar end
+    public String projectName, projectCategory, projectRole, projectDescription, projectApplicants;
+    public Boolean projectAvailable = true;
 
-    public Project(String projectName, String projectCategory, String projectRole, String projectDescription ) {
+
+    public Project(String projectName, String projectCategory, String projectRole, String projectDescription, String projectApplicants, Boolean projectAvailable ) {
         this.projectName = projectName;
         this.projectCategory = projectCategory;
         this.projectRole = projectRole;
         this.projectDescription = projectDescription;
+        this.projectApplicants = projectApplicants;
+        this.projectAvailable = projectAvailable;
     }
 
     public Project(){

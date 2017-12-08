@@ -129,9 +129,13 @@ public class NewProject extends Activity implements View.OnClickListener{
             String projectName = editTextProjectName.getText().toString();
             String projectRole = editTextRole.getText().toString();
             String projectDescription = editTextProjectDesc.getText().toString();
+            String applicants = "N/A";
 
-            Project myProject = new Project(projectName, category, projectRole, projectDescription);
+            Project myProject = new Project(projectName, category, projectRole, projectDescription, applicants, true);
             projectRef.push().setValue(myProject);
+
+            Intent intent = new Intent(NewProject.this, ProjectList.class);
+            startActivity(intent);
         }
 
 

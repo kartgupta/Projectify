@@ -43,17 +43,17 @@ public class ProjectList extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
-        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
-
-        imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ProjectList.this, NewProject.class);
-                startActivity(intent);
-
-            }
-        });
+//        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
+//
+//        imageButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent();
+//                intent.setClass(ProjectList.this, NewProject.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +91,7 @@ public class ProjectList extends Activity {
         listViewFindProjects.setAdapter(adapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Projects");
+        final DatabaseReference myRef = database.getReference("Projects");
 
 
         myRef.addChildEventListener(new ChildEventListener() {
@@ -132,6 +132,7 @@ public class ProjectList extends Activity {
                 int position = i;
                 String value = listViewFindProjects.getItemAtPosition(position).toString();
                 //Toast.makeText(ProjectList.this, "text"+value, Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(ProjectList.this, Project1.class);
                 intent.putExtra("value", value);
                 startActivity(intent);

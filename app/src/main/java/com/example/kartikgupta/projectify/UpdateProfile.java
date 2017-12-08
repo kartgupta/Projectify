@@ -51,7 +51,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
         buttonUpdate = (Button) findViewById(R.id.buttonUpdateProfile);
-        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
+//        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
 //        imageButton2.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -200,5 +200,12 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
 
 
 
+    }
+
+    //go to new project when click on the icon at top right corner
+    public void CreatProject(View view){
+        Intent intent = new Intent();
+        intent.setClass(UpdateProfile.this, NewProject.class);
+        startActivity(intent);
     }
 }
