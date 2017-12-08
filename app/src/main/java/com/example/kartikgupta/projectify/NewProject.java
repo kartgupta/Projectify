@@ -2,6 +2,7 @@ package com.example.kartikgupta.projectify;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -116,12 +117,15 @@ public class NewProject extends Activity implements View.OnClickListener{
         if (view == buttonJunior){
 
             category= "Junior";
+            buttonJunior.setBackgroundColor(Color.GRAY);
         }
         else if (view == buttonSenior){
             category = "Senior";
+            buttonSenior.setBackgroundColor(Color.GRAY);
         }
         else if (view == buttonManger){
             category = "Manager";
+            buttonManger.setBackgroundColor(Color.GRAY);
         }
 
         else if (view == buttonPost){
