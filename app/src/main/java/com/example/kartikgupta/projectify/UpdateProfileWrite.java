@@ -236,6 +236,7 @@ public class UpdateProfileWrite extends Activity implements View.OnClickListener
                                     userRef.child(userKey).child("experience").setValue(newExperience);
                                     userRef.child(userKey).child("designation").setValue(newDesignation);
                                     userRef.child(userKey).child("moreInfo").setValue(newMoreInfo);
+                                    //userRef.child(userKey).child("appliedProjects").setValue("")；
 
                                     Intent intentt = new Intent(UpdateProfileWrite.this, UpdateProfile.class);
                                     UpdateProfileWrite.this.startActivity(intentt);

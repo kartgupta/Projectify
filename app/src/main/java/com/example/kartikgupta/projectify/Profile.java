@@ -102,6 +102,9 @@ public class Profile extends Activity implements View.OnClickListener{
             String moreInfo = editTextMoreInfo.getText().toString();
 
             String password = editTextPassword.getText().toString();
+            //String[] appliedProjects = new String[2];
+            //appliedProjects[0] = "a";
+            //appliedProjects[1] = "b";
 
             //add to db
             UserProfile newProfile = new UserProfile(email, skill, interest, experience, designation, moreInfo);
@@ -128,7 +131,7 @@ public class Profile extends Activity implements View.OnClickListener{
                             Toast.makeText(Profile.this, "Your e-mail is wrong or password is less than 6 characters. Try again!",
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(Profile.this, "Registeration Sucessful and log in",
+                            Toast.makeText(Profile.this, "Registration Successful and log in",
                                     Toast.LENGTH_SHORT).show();
                             Intent intentt = new Intent(Profile.this, ProjectList.class);
                             Profile.this.startActivity(intentt);
