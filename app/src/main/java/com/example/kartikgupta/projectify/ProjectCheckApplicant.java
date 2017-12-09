@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Project1 extends Activity implements View.OnClickListener{
+public class ProjectCheckApplicant extends Activity implements View.OnClickListener{
 
     private TextView textViewProjectName, textViewDescription, textViewRole;
     private Button buttonApply;
@@ -38,9 +38,9 @@ public class Project1 extends Activity implements View.OnClickListener{
 
         textViewProjectName = (TextView) findViewById(R.id.textViewProjectName);
         textViewDescription = (TextView) findViewById(R.id.textViewDescription);
-        textViewRole = (TextView) findViewById(R.id.textViewRole);
+        textViewRole = (TextView) findViewById(R.id.textViewApplicantName);
 
-        buttonApply =(Button) findViewById(R.id.btnApply);
+        buttonApply =(Button) findViewById(R.id.btnViewProfile);
         buttonApply.setOnClickListener(this);
 
         //menu bar
@@ -53,7 +53,7 @@ public class Project1 extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Project1.this, NewProject.class);
+                intent.setClass(ProjectCheckApplicant.this, NewProject.class);
                 startActivity(intent);
 
             }
@@ -64,7 +64,7 @@ public class Project1 extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Project1.this, UpdateProfile.class);
+                intent.setClass(ProjectCheckApplicant.this, UpdateProfile.class);
                 startActivity(intent);
 
             }
@@ -74,7 +74,7 @@ public class Project1 extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Project1.this, MyProjects.class);
+                intent.setClass(ProjectCheckApplicant.this, MyProjects.class);
                 startActivity(intent);
 
             }
@@ -84,7 +84,7 @@ public class Project1 extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Project1.this, ProjectList.class);
+                intent.setClass(ProjectCheckApplicant.this, ProjectList.class);
                 startActivity(intent);
 
             }
@@ -124,11 +124,10 @@ public class Project1 extends Activity implements View.OnClickListener{
                         String Applicant = project.projectApplicants;
                         //Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
                         if((!Availability) && (!useremail.equals(Applicant))) {
-                            buttonApply.setText("Not Available");
-                            buttonApply.setBackgroundColor(Color.GRAY);
+                            textViewRole.setText(project.projectApplicants);
                         } else if((!Availability) && (useremail.equals(Applicant))) {
-                            buttonApply.setText("Applied");
-                            buttonApply.setBackgroundColor(Color.GRAY);
+//                            buttonApply.setText("Applied");
+//                            buttonApply.setBackgroundColor(Color.GRAY);
                         }
                     }
 
@@ -198,7 +197,7 @@ public class Project1 extends Activity implements View.OnClickListener{
                             Boolean currentProjectAvailable = project.projectAvailable;
 
                             if(currentProjectAvailable) {
-                                Toast.makeText(Project1.this, "You successfully applied to this project", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProjectCheckApplicant.this, "You successfully applied to this project", Toast.LENGTH_SHORT).show();
                                 pjRef.child(projectKey).child("projectApplicants").setValue(useremail);
                                 //SystemClock.sleep(1000);
                                 pjRef.child(projectKey).child("projectAvailable").setValue(false);

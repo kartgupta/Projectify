@@ -29,7 +29,8 @@
         <activity android:name=".NewProject" />
         <activity android:name=".ProjectList" />
         <activity android:name=".UpdateProfile" />
-        <activity android:name=".UpdateProfileWrite"></activity>
+        <activity android:name=".UpdateProfileWrite" />
+        <activity android:name=".ProjectCheckApplicant"></activity>
     </application>
 
 </manifest>

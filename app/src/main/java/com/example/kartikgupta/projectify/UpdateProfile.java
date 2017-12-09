@@ -34,7 +34,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
     //add menu bar
     private Button buttonMyProject;
     private Button buttonProfile;
-    private Button buttonProject;
+    private Button buttonProject, buttonLogout;
     private ImageButton imageButton2;
     //menu bar end
 
@@ -51,6 +51,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
         buttonUpdate = (Button) findViewById(R.id.buttonUpdateProfile);
+        buttonLogout = (Button) findViewById(R.id.buttonLogout);
 //        imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
 //        imageButton2.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +99,15 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(UpdateProfile.this, UpdateProfileWrite.class);
+                startActivity(intent);
+
+            }
+        });
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UpdateProfile.this, MainActivity.class);
                 startActivity(intent);
 
             }
