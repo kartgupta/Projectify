@@ -24,6 +24,7 @@ public class Project1 extends Activity implements View.OnClickListener{
 
     private TextView textViewProjectName, textViewDescription, textViewRole, textViewRules;
     private Button buttonApply;
+    private String Applicant;
 
     //add menu bar
     private Button buttonMyProject;
@@ -123,7 +124,7 @@ public class Project1 extends Activity implements View.OnClickListener{
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String useremail = user.getEmail();
                         Boolean Availability = project.projectAvailable;
-                        String Applicant = project.projectApplicants;
+                        Applicant = project.projectApplicants;
                         String Owner = project.projectOwner;
                         //Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
 
@@ -188,11 +189,16 @@ public class Project1 extends Activity implements View.OnClickListener{
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         final DatabaseReference pjRef = db.getReference("Projects");
 
+
         if(view == buttonApply) {
             String buttonText = buttonApply.getText().toString();
             if(buttonText.equals("View Profile")) {
-                Intent intentprofile = new Intent(Project1.this, UpdateProfile.class);
+
+                Intent intentprofile = new Intent(Project1.this, ApplicantProfile.class);
+                //Toast.makeText(Project1.this, "text " +Applicant, Toast.LENGTH_SHORT).show();
+                intentprofile.putExtra("value", Applicant);
                 startActivity(intentprofile);
+
             } else {
 
                 //Toast.makeText(Project1.this, "inside if view==buttonapply", Toast.LENGTH_SHORT).show();
