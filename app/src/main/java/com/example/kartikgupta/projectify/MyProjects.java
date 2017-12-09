@@ -33,6 +33,8 @@ public class MyProjects extends Activity {
     ArrayAdapter<String> adapter;
     ArrayList<String> t1=new ArrayList<>();
     ArrayList<String> d1=new ArrayList<>();
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     class dataListAdapter extends BaseAdapter {
         ArrayList<String> Title=new ArrayList<>();
@@ -94,18 +96,6 @@ public class MyProjects extends Activity {
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
- //       imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
-
-//        imageButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent();
-//                intent.setClass(MyProjects.this, NewProject.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
