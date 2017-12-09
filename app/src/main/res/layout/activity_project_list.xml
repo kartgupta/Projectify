@@ -48,7 +48,7 @@
         android:id="@+id/buttonProject"
         android:layout_width="128dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/imageButton3"
+        android:layout_alignBottom="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@color/Indigo"
@@ -78,76 +78,14 @@
         app:layout_constraintTop_toTopOf="@+id/buttonProject" />
 
 
-
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:background="@color/White"
-        android:src="@drawable/icon_card_black"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="109dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/textView"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/imageButton5"
-        android:layout_toStartOf="@+id/imageButton5"
-        android:background="@color/White"
-        android:src="@drawable/icon_computer_black"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        tools:layout_editor_absoluteY="109dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/textView"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
-        android:layout_toLeftOf="@+id/imageButton6"
-        android:layout_toStartOf="@+id/imageButton6"
-        android:background="@color/White"
-        android:src="@drawable/icon_phone_black"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
-        tools:layout_editor_absoluteY="109dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_alignEnd="@+id/btnCreateProject"
-        android:layout_alignRight="@+id/btnCreateProject"
-        android:layout_below="@+id/textView"
-        android:background="@color/White"
-        android:src="@drawable/icon_security_black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        tools:layout_editor_absoluteY="109dp" />
-
     <ListView
         android:id="@+id/listViewFindProjects"
         android:layout_width="match_parent"
         android:layout_height="3000dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageButton3"
-        android:layout_marginTop="14dp" /><!--android:layout_below="@+id/imageButton3"-->
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="11dp" /><!--android:layout_below="@+id/imageButton3"-->
         android:divider="?android:attr/listDivider"
         android:dividerHeight="2dp"
         android:footerDividersEnabled="true"
