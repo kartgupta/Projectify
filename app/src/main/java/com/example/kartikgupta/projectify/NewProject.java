@@ -129,11 +129,12 @@ public class NewProject extends Activity implements View.OnClickListener{
 
             if (view == buttonPost) {
 
-                String projectName = editTextProjectName.getText().toString();
+
                 String projectRole = editTextRole.getText().toString();
                 String projectDescription = editTextProjectDesc.getText().toString();
                 String projectOwner = email;
                 String applicants = "N/A";
+                String projectName = editTextProjectName.getText().toString();
 
                 Project myProject = new Project(projectName, projectRole, projectDescription, applicants, true, projectOwner);
                 projectRef.push().setValue(myProject);
