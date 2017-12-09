@@ -95,14 +95,14 @@
 
     <TextView
         android:id="@+id/textViewDescription"
-        android:layout_width="350dp"
-        android:layout_height="251dp"
+        android:layout_width="331dp"
+        android:layout_height="163dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewDes"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <TextView
         android:id="@+id/textViewDes"
@@ -113,11 +113,10 @@
         android:text="Description"
         android:textColor="@color/Black"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewProjectName"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.325" />
 
     <TextView
         android:id="@+id/textViewRules"
@@ -129,22 +128,18 @@
         android:textAlignment="viewStart"
         android:textColor="@color/Black"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewDescription"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/textViewRole"
         android:layout_width="187dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewRules"
         app:layout_constraintTop_toBottomOf="@+id/textViewRules" />
 
     <Button
@@ -163,9 +158,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintVertical_bias="0.848" />
 
 </android.support.constraint.ConstraintLayout>
