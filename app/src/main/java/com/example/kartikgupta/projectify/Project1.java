@@ -129,6 +129,7 @@ public class Project1 extends Activity implements View.OnClickListener{
 
                         if(useremail.equals(Owner)) {
                             textViewRules.setText("Applicants");
+                            textViewRole.setText(Applicant);
                             buttonApply.setText("View Profile");
                         } else if((!Availability) && (!useremail.equals(Applicant))) {
                             buttonApply.setText("Not Available");
