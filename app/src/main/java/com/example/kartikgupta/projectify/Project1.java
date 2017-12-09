@@ -122,14 +122,20 @@ public class Project1 extends Activity implements View.OnClickListener{
                         String useremail = user.getEmail();
                         Boolean Availability = project.projectAvailable;
                         String Applicant = project.projectApplicants;
+                        String Owner = project.projectOwner;
                         //Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
-                        if((!Availability) && (!useremail.equals(Applicant))) {
+
+                        if(useremail.equals(Owner)) {
+                            buttonApply.setText("View Profile");
+                        } else if((!Availability) && (!useremail.equals(Applicant))) {
                             buttonApply.setText("Not Available");
                             buttonApply.setBackgroundColor(Color.GRAY);
                         } else if((!Availability) && (useremail.equals(Applicant))) {
                             buttonApply.setText("Applied");
                             buttonApply.setBackgroundColor(Color.GRAY);
                         }
+
+
                     }
 
                     @Override
@@ -179,66 +185,70 @@ public class Project1 extends Activity implements View.OnClickListener{
         final DatabaseReference pjRef = db.getReference("Projects");
 
         if(view == buttonApply) {
-            //Toast.makeText(Project1.this, "inside if view==buttonapply", Toast.LENGTH_SHORT).show();
-            pjRef.orderByChild("projectName").equalTo(ValueInList).addValueEventListener(new ValueEventListener() {
+            String buttonText = buttonApply.getText().toString();
+            if(buttonText.equals("View Profile")) {
+                Intent intentprofile = new Intent(Project1.this, UpdateProfile.class);
+                startActivity(intentprofile);
+            } else {
 
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
+                //Toast.makeText(Project1.this, "inside if view==buttonapply", Toast.LENGTH_SHORT).show();
+                pjRef.orderByChild("projectName").equalTo(ValueInList).addValueEventListener(new ValueEventListener() {
 
-                    pjRef.orderByChild("projectName").equalTo(ValueInList).addChildEventListener(new ChildEventListener() {
-                        @Override
-                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                            //get current user email. (user name = null)
-                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            String useremail = user.getEmail();
-                            String projectKey = dataSnapshot.getKey();
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            Project project = new Project();
-                            project = dataSnapshot.getValue(Project.class);
-                            Boolean currentProjectAvailable = project.projectAvailable;
+                        pjRef.orderByChild("projectName").equalTo(ValueInList).addChildEventListener(new ChildEventListener() {
+                            @Override
+                            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                                //get current user email. (user name = null)
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String useremail = user.getEmail();
+                                String projectKey = dataSnapshot.getKey();
 
-                            if(currentProjectAvailable) {
-                                Toast.makeText(Project1.this, "You successfully applied to this project", Toast.LENGTH_SHORT).show();
-                                pjRef.child(projectKey).child("projectApplicants").setValue(useremail);
-                                //SystemClock.sleep(1000);
-                                pjRef.child(projectKey).child("projectAvailable").setValue(false);
-                                buttonApply.setText("Applied");
-                                buttonApply.setBackgroundColor(Color.GRAY);
+                                Project project = new Project();
+                                project = dataSnapshot.getValue(Project.class);
+                                Boolean currentProjectAvailable = project.projectAvailable;
+
+                                if (currentProjectAvailable) {
+                                    Toast.makeText(Project1.this, "You successfully applied to this project", Toast.LENGTH_SHORT).show();
+                                    pjRef.child(projectKey).child("projectApplicants").setValue(useremail);
+                                    //SystemClock.sleep(1000);
+                                    pjRef.child(projectKey).child("projectAvailable").setValue(false);
+                                    buttonApply.setText("Applied");
+                                    buttonApply.setBackgroundColor(Color.GRAY);
+                                }
+
+
                             }
 
+                            @Override
+                            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
+                            }
 
+                            @Override
+                            public void onChildRemoved(DataSnapshot dataSnapshot) {
 
+                            }
 
-                        }
+                            @Override
+                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-                        @Override
-                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                            }
 
-                        }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
 
-                        @Override
-                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+                            }
+                        });
+                    }
 
-                        }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-                        @Override
-                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
+                    }
+                });
+            }
         }
 
 
