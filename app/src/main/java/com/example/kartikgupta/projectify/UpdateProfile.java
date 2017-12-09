@@ -106,6 +106,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener{
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent();
                 intent.setClass(UpdateProfile.this, MainActivity.class);
                 startActivity(intent);
