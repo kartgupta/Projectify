@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class NewProject extends Activity implements View.OnClickListener{
 
@@ -133,7 +137,7 @@ public class NewProject extends Activity implements View.OnClickListener{
 
                 Project myProject = new Project(projectName, projectRole, projectDescription, applicants, true, projectOwner);
                 projectRef.push().setValue(myProject);
-
+                Toast.makeText(NewProject.this,"New project posted successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(NewProject.this, ProjectList.class);
                 startActivity(intent);
             }

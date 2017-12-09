@@ -115,7 +115,7 @@
         android:gravity="top"
         android:hint="Please use this space to describe the project and mention important aspects about the project"
         android:inputType="textMultiLine"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -155,7 +155,7 @@
         android:ems="10"
         android:gravity="center_vertical|fill_vertical"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -186,7 +186,7 @@
         android:ems="10"
         android:hint="e.g. Product designer, software engineer"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
