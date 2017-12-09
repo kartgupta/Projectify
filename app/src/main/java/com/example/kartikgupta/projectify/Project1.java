@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Project1 extends Activity implements View.OnClickListener{
 
-    private TextView textViewProjectName, textViewDescription, textViewRole;
+    private TextView textViewProjectName, textViewDescription, textViewRole, textViewRules;
     private Button buttonApply;
 
     //add menu bar
@@ -39,6 +39,8 @@ public class Project1 extends Activity implements View.OnClickListener{
         textViewProjectName = (TextView) findViewById(R.id.textViewProjectName);
         textViewDescription = (TextView) findViewById(R.id.textViewDescription);
         textViewRole = (TextView) findViewById(R.id.textViewRole);
+        textViewRules = (TextView) findViewById(R.id.textViewRules);
+
 
         buttonApply =(Button) findViewById(R.id.btnApply);
         buttonApply.setOnClickListener(this);
@@ -126,6 +128,7 @@ public class Project1 extends Activity implements View.OnClickListener{
                         //Toast.makeText(Project1.this, "useremail: "+useremail+"  Applicant:"+Applicant, Toast.LENGTH_SHORT).show();
 
                         if(useremail.equals(Owner)) {
+                            textViewRules.setText("Applicants");
                             buttonApply.setText("View Profile");
                         } else if((!Availability) && (!useremail.equals(Applicant))) {
                             buttonApply.setText("Not Available");
