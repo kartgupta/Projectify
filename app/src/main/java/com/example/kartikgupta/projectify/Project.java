@@ -7,17 +7,18 @@ import android.widget.Button;
  */
 
 public class Project {
-    public String projectName, projectCategory, projectRole, projectDescription, projectApplicants;
+    public String projectName, projectRole, projectDescription, projectApplicants, projectOwner;
     public Boolean projectAvailable = true;
 
 
-    public Project(String projectName, String projectCategory, String projectRole, String projectDescription, String projectApplicants, Boolean projectAvailable ) {
+    public Project(String projectName, String projectRole, String projectDescription, String projectApplicants, Boolean projectAvailable, String projectOwner ) {
         this.projectName = projectName;
-        this.projectCategory = projectCategory;
+//        this.projectCategory = projectCategory;
         this.projectRole = projectRole;
         this.projectDescription = projectDescription;
         this.projectApplicants = projectApplicants;
         this.projectAvailable = projectAvailable;
+        this.projectOwner = projectOwner;
     }
 
     public Project(){

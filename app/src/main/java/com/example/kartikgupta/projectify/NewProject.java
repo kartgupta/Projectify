@@ -3,6 +3,7 @@ package com.example.kartikgupta.projectify;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,8 @@ import android.widget.ListView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -20,9 +23,6 @@ public class NewProject extends Activity implements View.OnClickListener{
 
 
     private EditText editTextProjectName, editTextRole, editTextProjectDesc;
-    private Button buttonJunior;
-    private Button buttonManger;
-    private Button buttonSenior;
     private Button buttonPost;
     //add menu bar
     private Button buttonMyProject;
@@ -30,7 +30,9 @@ public class NewProject extends Activity implements View.OnClickListener{
     private Button buttonProject;
     private ImageButton imageButton2;
     //menu bar end
-    public String category = new String();
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     ArrayList<String> list = new ArrayList<>();
@@ -93,14 +95,8 @@ public class NewProject extends Activity implements View.OnClickListener{
         editTextRole = findViewById(R.id.editTextRole);
         editTextProjectDesc = findViewById(R.id.editTextProjectDesc);
         buttonPost = findViewById(R.id.buttonPost);
-        buttonJunior = findViewById(R.id.buttonJunior);
-        buttonManger = findViewById(R.id.buttonManager);
-        buttonSenior = findViewById(R.id.buttonSenior);
-
         buttonPost.setOnClickListener(this);
-        buttonJunior.setOnClickListener(this);
-        buttonManger.setOnClickListener(this);
-        buttonSenior.setOnClickListener(this);
+
 
     }
 
@@ -112,36 +108,36 @@ public class NewProject extends Activity implements View.OnClickListener{
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference projectRef = database.getReference("Projects");
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            final String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
 
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
 
-        if (view == buttonJunior){
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
 
-            category= "Junior";
-            buttonJunior.setBackgroundColor(Color.GRAY);
+            if (view == buttonPost) {
+
+                String projectName = editTextProjectName.getText().toString();
+                String projectRole = editTextRole.getText().toString();
+                String projectDescription = editTextProjectDesc.getText().toString();
+                String projectOwner = email;
+                String applicants = "N/A";
+
+                Project myProject = new Project(projectName, projectRole, projectDescription, applicants, true, projectOwner);
+                projectRef.push().setValue(myProject);
+
+                Intent intent = new Intent(NewProject.this, ProjectList.class);
+                startActivity(intent);
+            }
         }
-        else if (view == buttonSenior){
-            category = "Senior";
-            buttonSenior.setBackgroundColor(Color.GRAY);
-        }
-        else if (view == buttonManger){
-            category = "Manager";
-            buttonManger.setBackgroundColor(Color.GRAY);
-        }
-
-        else if (view == buttonPost){
-
-            String projectName = editTextProjectName.getText().toString();
-            String projectRole = editTextRole.getText().toString();
-            String projectDescription = editTextProjectDesc.getText().toString();
-            String applicants = "N/A";
-
-            Project myProject = new Project(projectName, category, projectRole, projectDescription, applicants, true);
-            projectRef.push().setValue(myProject);
-
-            Intent intent = new Intent(NewProject.this, ProjectList.class);
-            startActivity(intent);
-        }
-
 
         //myRef.push().setValue(editTextProjectName.getText().toString());
         //editTextProjectName.setText("");
