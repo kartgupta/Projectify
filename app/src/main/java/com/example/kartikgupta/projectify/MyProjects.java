@@ -28,11 +28,13 @@ import java.util.ArrayList;
 
 public class MyProjects extends Activity {
 
-    private ListView listViewApplied;
-    ArrayList<String> list = new ArrayList<>();
-    ArrayAdapter<String> adapter;
+    private ListView listViewApplied, listViewPosted;
+    //ArrayList<String> list = new ArrayList<>();
+    //ArrayAdapter<String> adapter;
     ArrayList<String> t1=new ArrayList<>();
     ArrayList<String> d1=new ArrayList<>();
+    ArrayList<String> t2=new ArrayList<>();
+    ArrayList<String> d2=new ArrayList<>();
 
     class dataListAdapter extends BaseAdapter {
         ArrayList<String> Title=new ArrayList<>();
@@ -76,25 +78,104 @@ public class MyProjects extends Activity {
         }
     }
 
-
     //add menu bar
     private Button buttonMyProject;
     private Button buttonProfile;
     private Button buttonProject;
     //private ImageButton imageButton2;
     //menu bar end
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_projects);
 
         listViewApplied = findViewById(R.id.listViewApplied);
+        listViewPosted = findViewById(R.id.listViewPosted);
+
+
+
+        //adapter = new ArrayAdapter<String>(this, R.layout.projectlayout, R.id.textViewProjectName, list);
+        //listViewApplied.setAdapter(adapter);
+        final MyProjects.dataListAdapter adapterNew = new MyProjects.dataListAdapter(t1,d1);
+        listViewApplied.setAdapter(adapterNew);
+        final MyProjects.dataListAdapter adapterPost = new MyProjects.dataListAdapter(t2,d2);
+        listViewPosted.setAdapter(adapterPost);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Projects");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String useremail = user.getEmail();
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String foundApplied = snapshot.child("projectApplicants").getValue().toString();
+                    String projectowner = snapshot.child("projectOwner").getValue().toString();
+                    String projectname = snapshot.child("projectName").getValue().toString();
+                    String projectDescription = snapshot.child("projectDescription").getValue().toString();
+
+                    if(foundApplied.equals(useremail)) {
+                        t1.add(0, projectname);
+                        d1.add(0, projectDescription);
+                        adapterNew.notifyDataSetChanged();
+                    }
+
+                    if(projectowner.equals(useremail)) {
+                        t2.add(0, projectname);
+                        d2.add(0, projectDescription);
+                        adapterPost.notifyDataSetChanged();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        listViewApplied.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Toast.makeText(ProjectList.this, "text"+, Toast.LENGTH_SHORT).show();
+                int position = i;
+                //String value = listViewApplied.getItemAtPosition(position).toString();
+                String value = ((TextView) view.findViewById(R.id.textViewProjectName)).getText().toString();
+                //Toast.makeText(MyProjects.this, "text "+i+" "+value, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MyProjects.this, Project1.class);
+                intent.putExtra("value", value);
+                startActivity(intent);
+
+            }
+        });
+
+
+        listViewPosted.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Toast.makeText(ProjectList.this, "text"+, Toast.LENGTH_SHORT).show();
+                int position = i;
+                //String value = listViewApplied.getItemAtPosition(position).toString();
+                String value = ((TextView) view.findViewById(R.id.textViewProjectName)).getText().toString();
+                //Toast.makeText(MyProjects.this, "text "+i+" "+value, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MyProjects.this, Project1.class);
+                intent.putExtra("value", value);
+                startActivity(intent);
+
+            }
+        });
+
 
         //menu bar
         buttonProfile = (Button) findViewById(R.id.buttonProfile);
         buttonMyProject = (Button) findViewById(R.id.buttonMyProject);
         buttonProject = (Button) findViewById(R.id.buttonProject);
- //       imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
+        //       imageButton2 = (ImageButton) findViewById(R.id.btnCreateProject);
 
 //        imageButton2.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -137,53 +218,6 @@ public class MyProjects extends Activity {
         });
 
         //menu bar end
-
-        adapter = new ArrayAdapter<String>(this, R.layout.projectlayout, R.id.textViewProjectName, list);
-        //listViewApplied.setAdapter(adapter);
-        final MyProjects.dataListAdapter adapterNew = new MyProjects.dataListAdapter(t1,d1);
-        listViewApplied.setAdapter(adapterNew);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("Projects");
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        final String useremail = user.getEmail();
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String foundApplied = snapshot.child("projectApplicants").getValue().toString();
-                    String projectname = snapshot.child("projectName").getValue().toString();
-                    String projectDescription = snapshot.child("projectDescription").getValue().toString();
-                    if(foundApplied.equals(useremail)) {
-                        t1.add(0, projectname);
-                        d1.add(0, projectDescription);
-                        adapterNew.notifyDataSetChanged();
-                    }
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-
-        listViewApplied.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(ProjectList.this, "text"+, Toast.LENGTH_SHORT).show();
-                int position = i;
-                //String value = listViewApplied.getItemAtPosition(position).toString();
-                String value = ((TextView) view.findViewById(R.id.textViewProjectName)).getText().toString();
-                //Toast.makeText(MyProjects.this, "text "+i+" "+value, Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(MyProjects.this, Project1.class);
-                intent.putExtra("value", value);
-                startActivity(intent);
-
-            }
-        });
 
 
     }
